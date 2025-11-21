@@ -3,9 +3,9 @@
     {
       "name": "bitget",
       "exchange_type": "bitget",
-      "api_key": "bg_4ab147c9449d81bdfdf8c5555639664d",
-      "api_secret": "dc9ce3302b7db664d47f4b8adcc2252e159ed536d8047e76ad62e846c6c65f70",
-      "password": "abc199727",
+      "api_key": "。。。",
+      "api_secret": "。。。",
+      "password": "。。。",
       "testnet": false,
       "enabled": true,
       "default_leverage": 20,
@@ -20,8 +20,8 @@
     {
       "name": "LBANK",
       "exchange_type": "lbank",
-      "api_key": "b141dfe7-4c9d-4de7-828a-a61af7fb5524",
-      "api_secret": "7C05D2F1984DB0E395511CF68EEE3C6B",
+      "api_key": "。。。",
+      "api_secret": "。。。",
       "password": "",
       "testnet": false,
       "enabled": false,

@@ -209,6 +209,29 @@ RISK_PERCENTAGE=1.0
 
 ## 使用方法
 
+### 在 Replit 上云端运行（Telegram 机器人挂机）
+
+1. **从 GitHub 导入到 Replit**
+   - 本地将代码推送到 GitHub 公共仓库后，在 Replit 中选择 "Import from GitHub" 创建 Repl。
+2. **在 Secrets 中配置环境变量（不使用 .env 明文）**
+   - Telegram 相关：`TELEGRAM_API_ID`、`TELEGRAM_API_HASH`、`TELEGRAM_PHONE`、`TELEGRAM_GROUP_ID`。
+   - 交易控制：`TRADING_ENABLED`（`False`=仅监听不下单，`True`=实盘下单），`EXCHANGE_TESTNET`（`True`=测试网，`False`=正式网）。
+   - 多交易所密钥覆盖（推荐只放在 Secrets）：
+     - Bitget：`BITGET_API_KEY`、`BITGET_API_SECRET`、`BITGET_PASSWORD`
+     - LBank：`LBANK_API_KEY`、`LBANK_API_SECRET`、`LBANK_PASSWORD`
+   - `exchanges_config.json` 中可以只保留结构和风控参数，不再保存真实密钥，程序会自动用上述环境变量覆盖。
+3. **首次在 Replit 上运行机器人**
+   - 打开 Replit 底部 **Shell**：
+     - 执行一次依赖安装：`pip install -r requirements.txt`
+     - 执行：`python main.py`
+   - 首次登录时在 Shell 中输入 Telegram 验证码和两步验证密码（如有）。
+   - 日志中出现 `✓ Telegram 客户端已启动` 且列出 3 个群组，即表示云端监听成功，`trading_bot_session.session` 会在 Replit 生成。
+4. **后续重新挂机**
+   - 以后只需在 Replit Shell 中执行 `python main.py` 即可重新启动机器人，一般不会再次要求验证码。
+5. **监听模式与实盘模式**
+   - 监听模式（推荐默认）：`TRADING_ENABLED=False`，只监听和解析信号，不在交易所下单。
+   - 实盘模式：在确认 Secrets 中的 API 权限与风控参数无误后，将 `TRADING_ENABLED` 设为 `True`，并按需将 `EXCHANGE_TESTNET` 设为 `False`，建议先用极小仓位验证。
+
 ### GUI 版本（推荐新手）
 
 **Windows 用户：**
