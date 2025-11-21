@@ -93,9 +93,6 @@ class MultiExchangeConfig:
         # 如果没有配置，尝试从 .env 加载默认配置
         if not self.accounts:
             self.load_from_env()
-        
-        # 使用环境变量覆盖敏感字段（API Key / Secret / Password）
-        self._apply_env_overrides()
     
     def add_account(self, account: ExchangeAccount):
         """添加交易所账户"""
@@ -161,42 +158,6 @@ class MultiExchangeConfig:
             )
             self.add_account(default_account)
     
-    def _apply_env_overrides(self):
-        """使用环境变量覆盖账户中的敏感字段
-        
-        约定命名规则（推荐）：
-        - 按交易所类型或账户名的大写作为前缀，例如:
-          - BITGET_API_KEY / BITGET_API_SECRET / BITGET_PASSWORD
-          - LBANK_API_KEY / LBANK_API_SECRET / LBANK_PASSWORD
-        """
-        if not self.accounts:
-            return
-
-        for acc in self.accounts:
-            prefixes = []
-            if getattr(acc, 'name', None):
-                prefixes.append(str(acc.name).upper().replace(' ', '_'))
-            if getattr(acc, 'exchange_type', None):
-                prefixes.append(str(acc.exchange_type).upper().replace(' ', '_'))
-
-            seen = set()
-            for prefix in prefixes:
-                if not prefix or prefix in seen:
-                    continue
-                seen.add(prefix)
-
-                api_key_env = os.getenv(f"{prefix}_API_KEY")
-                if api_key_env:
-                    acc.api_key = api_key_env
-
-                api_secret_env = os.getenv(f"{prefix}_API_SECRET")
-                if api_secret_env:
-                    acc.api_secret = api_secret_env
-
-                password_env = os.getenv(f"{prefix}_PASSWORD")
-                if password_env:
-                    acc.password = password_env
-    
     def __len__(self):
         return len(self.accounts)
     
@@ -205,4 +166,3 @@ class MultiExchangeConfig:
 
 # 全局配置实例
 multi_exchange_config = MultiExchangeConfig()
-
