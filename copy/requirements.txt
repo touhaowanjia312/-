@@ -1,0 +1,12 @@
+telethon==1.36.0
+python-dotenv==1.0.1
+ccxt==4.3.0
+requests==2.32.3
+asyncio==3.4.3
+python-telegram-bot==21.5
+
+# GUI 依赖
+customtkinter==5.2.1
+pillow==10.3.0
+matplotlib==3.8.4
+

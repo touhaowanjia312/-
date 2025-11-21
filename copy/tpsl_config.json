@@ -1,0 +1,27 @@
+{
+  "use_signal_tpsl": true,
+  "additional_tps": [
+    {
+      "profit_percent": 5.0,
+      "portion_percent": 30.0
+    },
+    {
+      "profit_percent": 10.0,
+      "portion_percent": 30.0
+    },
+    {
+      "profit_percent": 20.0,
+      "portion_percent": 40.0
+    }
+  ],
+  "default_stop_loss_percent": 8.0,
+  "trailing_stop": {
+    "enabled": true,
+    "percent": 3.0
+  },
+  "breakeven": {
+    "enabled": true,
+    "trigger_percent": 1.0
+  },
+  "stop_trailing_after_breakeven": false
+}

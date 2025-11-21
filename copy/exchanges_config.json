@@ -1,0 +1,37 @@
+{
+  "accounts": [
+    {
+      "name": "bitget",
+      "exchange_type": "bitget",
+      "api_key": "bg_4ab147c9449d81bdfdf8c5555639664d",
+      "api_secret": "dc9ce3302b7db664d47f4b8adcc2252e159ed536d8047e76ad62e846c6c65f70",
+      "password": "abc199727",
+      "testnet": false,
+      "enabled": true,
+      "default_leverage": 20,
+      "default_position_size": 0.01,
+      "max_position_size": 1000000.0,
+      "risk_percentage": 5.0,
+      "use_margin_amount": true,
+      "margin_amount": 2.0,
+      "risk_as_notional": false,
+      "manual_contract_balance": 0.0
+    },
+    {
+      "name": "LBANK",
+      "exchange_type": "lbank",
+      "api_key": "b141dfe7-4c9d-4de7-828a-a61af7fb5524",
+      "api_secret": "7C05D2F1984DB0E395511CF68EEE3C6B",
+      "password": "",
+      "testnet": false,
+      "enabled": false,
+      "default_leverage": 30,
+      "default_position_size": 0.01,
+      "max_position_size": 1000000.0,
+      "risk_percentage": 10.0,
+      "use_margin_amount": false,
+      "margin_amount": 1.0,
+      "manual_contract_balance": 0.0
+    }
+  ]
+}

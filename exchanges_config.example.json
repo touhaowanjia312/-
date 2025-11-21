@@ -1,0 +1,21 @@
+{
+  "accounts": [
+    {
+      "name": "bitget-demo",
+      "exchange_type": "bitget",
+      "api_key": "YOUR_API_KEY",
+      "api_secret": "YOUR_API_SECRET",
+      "password": "YOUR_API_PASSWORD",
+      "testnet": true,
+      "enabled": false,
+      "default_leverage": 20,
+      "default_position_size": 0.01,
+      "max_position_size": 1000.0,
+      "risk_percentage": 1.0,
+      "use_margin_amount": true,
+      "margin_amount": 10.0,
+      "risk_as_notional": false,
+      "manual_contract_balance": 0.0
+    }
+  ]
+}

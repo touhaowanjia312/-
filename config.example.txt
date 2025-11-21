@@ -1,0 +1,18 @@
+# Telegram API 配置
+TELEGRAM_API_ID=your_api_id
+TELEGRAM_API_HASH=your_api_hash
+TELEGRAM_PHONE=+86xxxxxxxxxx
+TELEGRAM_GROUP_ID=your_group_id_or_username
+
+# 交易所 API 配置 (以币安为例)
+EXCHANGE_NAME=binance
+EXCHANGE_API_KEY=your_exchange_api_key
+EXCHANGE_API_SECRET=your_exchange_api_secret
+EXCHANGE_TESTNET=True
+
+# 交易配置
+TRADING_ENABLED=False
+DEFAULT_POSITION_SIZE=0.01
+MAX_POSITION_SIZE=0.1
+RISK_PERCENTAGE=1.0
+
